@@ -1,14 +1,7 @@
-const http = require('http');
-const server = http.createServer();
-const port = process.env.PORT || 3232;
-const io = require('socket.io')(http);
+const app = require('express')();
+const port = process.env.PORT || 3231;
+const server = app.listen(port);
+const io = module.exports.io =  require('socket.io')(server);
 const SocketMananger = require('./socketManager');
 
 io.on('connection',SocketMananger)
-
-server.listen(port,err=>{
-    if(err)
-    console.log(err)
-    else
-    console.log("Connected! at port: ", port)
-})

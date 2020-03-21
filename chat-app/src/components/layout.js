@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import io from 'socket.io-client';
+import openSocket from 'socket.io-client';
 
 import { USER_CONNECTED ,LOGOUT } from '../events';
 import LoginForm from './loginForm';
-const socketUrl = process.env.SOCKET_URL || 'http://192.168.0.105:3232'
+const socketUrl = 'http://localhost:3231/'
 
 export default class Layout extends Component {
 
@@ -14,9 +14,16 @@ export default class Layout extends Component {
             user:null
         }
     }
+    componentDidMount(){
+        this.initSocket();
+    }
     initSocket = () => {
-        const socket = io(socketUrl);
-        socket.on('connection',()=>{
+        console.log("Hello")
+        const socket = openSocket(socketUrl)
+        socket.on('connect',(error)=>{
+            if(error)
+            console.log(error)
+            else
             console.log("connected from client side")
         })
         this.setState({socket})
@@ -36,7 +43,7 @@ export default class Layout extends Component {
 
         return (
             <div className="container">
-                <LoginForm socket={socket} serUser={this.setUser}/>
+                <LoginForm socket={socket} setUser={this.setUser}/>
             </div>
         )
     }

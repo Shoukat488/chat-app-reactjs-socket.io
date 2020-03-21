@@ -14,10 +14,10 @@ export default class LoginForm extends Component {
         this.setState({error:"Name is already taken"})
         else
         this.props.setUser(user)
-
         console.log(user)
     }
     handleSubmit = (e) => {
+        e.preventDefault();
         const { socket } = this.props;
         const { nickname } = this.state;
 
