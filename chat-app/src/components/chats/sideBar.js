@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faListUl } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faEject } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default class SideBar extends Component {
     constructor(props) {
@@ -29,7 +29,7 @@ export default class SideBar extends Component {
         return (
             <div id="side-bar">
                 <div className="heading">
-                    <div className="app-name">Our Cool Chat <FontAwesomeIcon icon={faChevronDown} /></div>
+                    <div className="app-name">GupShup</div>
                     <div className="menu">
                         <FontAwesomeIcon icon={faListUl} />
                     </div>
@@ -81,7 +81,7 @@ export default class SideBar extends Component {
                 <div className="current-user">
                     <span>{user.name}</span>
                     <div onClick={() => { logout() }} title="Logout" className="logout">
-                        <FontAwesomeIcon icon={faEject} />
+                        <FontAwesomeIcon icon={faSignOutAlt} />
                     </div>
                 </div>
             </div>

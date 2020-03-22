@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 export default class MessageInput extends Component {
 	
 	constructor(props) {
@@ -91,7 +92,11 @@ export default class MessageInput extends Component {
 						type = "submit"
 						className = "send"
 
-					> Send </button>
+					>
+						<FontAwesomeIcon
+						icon={faArrowCircleRight}
+						/>
+					 </button>
 				</form>
 
 			</div>
