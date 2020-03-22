@@ -1,3 +1,8 @@
+## app run command
+to run app you need to run two command at the same time to initialize server and react app
+### npm run server
+### npm run react
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
