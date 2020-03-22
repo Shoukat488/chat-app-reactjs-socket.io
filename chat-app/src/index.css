@@ -14,13 +14,21 @@ input, textarea {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    background:rgb(231, 232, 233);
 }
 
 .login-form {
     display: flex;
     justify-content: center;
-    flex-direction: column
+    flex-direction: column;
+    background:#5c227e;
+    color: #fff;
+    box-shadow: 2px 2px 10px 2px gray;
+    height: 200px;
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .login-form input {
@@ -30,7 +38,9 @@ input, textarea {
     border-right: none;
     height: 20px;
     line-height: 20px;
+    background: #5c227e;
     font-size: 20px;
+    color: #b3b2ca;
     border-bottom: solid 2px #b3b2ca;
     transition: all .23s ease-in
 }
