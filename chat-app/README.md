@@ -1,5 +1,5 @@
-## app run command
-to run app you need to run two command at the same time to initialize server and react app
+## app running commands
+to run app you need to run two commands at the same time to initialize server and react app
 ### npm run server
 ### npm run react
 
