@@ -10,10 +10,12 @@ export default class LoginForm extends Component {
         }
     }
     setUser = ({ user, isUser }) => {
+        console.log(this.props)
         if (isUser)
         this.setState({error:"Name is already taken"})
         else
         this.props.setUser(user)
+
         console.log(user)
     }
     handleSubmit = (e) => {
@@ -27,7 +29,7 @@ export default class LoginForm extends Component {
         this.setState({ nickname: e.target.value })
     }
     render() {
-        const { nickname } = this.state;
+        const { nickname , error } = this.state;
 
         return (
             <div className="login">
@@ -43,6 +45,9 @@ export default class LoginForm extends Component {
                         value={nickname}
                         placeholder="hello user!"
                     />
+                    <div className = "error">
+                            {error}
+                    </div>
                 </form>
             </div>
         )
