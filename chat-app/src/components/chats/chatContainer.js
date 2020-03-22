@@ -30,6 +30,13 @@ export default class ChatContainer extends Component {
             socket.emit(COMMUNITY_CHAT, this.resetChat)
         })
     }
+
+
+    sendOpenPrivateMessage = (reciever) => {
+		const { socket, user } = this.props
+		const { activeChat } = this.state
+		socket.emit(PRIVATE_MESSAGE, {reciever, sender:user.name, activeChat})
+	}
 	/*
 	*	Reset the chat back to only the chat passed in.
 	* 	@param chat {Chat}
@@ -149,6 +156,7 @@ export default class ChatContainer extends Component {
                     user={user}
                     activeChat={activeChat}
                     setActiveChat={this.setActiveChat}
+                    onSendPrivateMessage={this.sendOpenPrivateMessage}
                 />
                 <div className="chat-room-container">
                     {
